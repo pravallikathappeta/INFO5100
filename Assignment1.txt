@@ -1,0 +1,161 @@
+1. Ordering a hotel online before a trip
+
+
+	Sequence of invoking behaviors on Objects:
+
+		Customer customer,
+		Internet internet,
+		Website websites[],
+		Hotel hotel,
+		Confirmation response
+
+		if Internet.isAvailable
+			customer.searchInInternet -> internet, question : find  Hotel website
+			customer.findDesirableWebsite -> internet, website
+			hotels = website
+			if hotels is available or hotels!=null
+				hotels.searchForHotels -> price, address, type, phone
+					Hotel = hotel
+				customer.bookHotel -> name, phone, CreditCard, hotel = orderconfirmation
+				response = orderconfirmation
+			else
+				hotel.isNotAvailable
+		else
+			Internet.IsNotAvailableTryAfterSomeTime
+
+
+
+2. Design an app for calling taxis(e.g.Uber)
+
+	Things:
+
+		Customer:
+			Data: Name, PhoneNumber
+			Behavior: BookCab, EnterPickUpLocation, EnterDropLocation, Ride
+
+		CreditCard:
+			Data: Number, Name, Company, Name, Expiry, SecurityCode, Balance
+
+		CreditCardCompany:
+			Behavior: AuthorizeTransaction, DeclineTransaction
+
+		Uber:
+			Data: Collection of Cabs, Availability, CabFare, TripStatus
+			Behavior: LocateCar, Authorize
+
+		Car:
+			Data: Registration, Make, Model, Color
+
+		Driver:
+			Data: Name
+
+	Sequence of invoking behaviors on Objects:
+
+		Customer customer,
+		Uber uber[],
+		Car car,
+		Confirmation response
+
+
+		If uber!=null
+			customer.enrollInUber -> name, address, phone, creditCardDetails, uber: confirmation
+			response = confirmation
+			
+			customer.searchUber -> pickLocation, dropLocation, Uber: confirmation
+			response = confirmation
+			
+			if confirmation!= null
+				customer.ride -> destination
+			else
+				Uber.cabsNotAvailable
+		else
+			Uber.isNotAvailableTryAgainLater
+
+3. Design a job searching and posting platform
+
+	Things:
+		
+		User:
+			Data: Name, EmailID, Phone, Address, LoginID, Password, EducationalQualifications, WorkExperience, Projects, Recommendations, Connections, Skills
+			Behavior: LogIn, LogOut, RequestConnections, ApproveConnections, EditProfile, ApplyForJobs
+
+		JobSearchingPlatform:
+
+			Data: Name, URL
+			Behavior: Authorize
+
+	Sequence of invoking behaviors on Objects:
+
+		User user
+		JobSearchingPlatform linkedin
+		
+
+		If user.alreadyRegisterd!=True
+			user.createProfile -> Name, email, phone, address, loginId, password
+		else
+			user.loginToJobSearchingPlatform -> linkedin : authorize
+
+			if authorize is true
+				user.login -> linkedin
+				user.applyForJob -> organization : confirmation
+				response = confirmation
+
+				if confirmation!=null
+					user.attendInterview -> organization : confirmation
+
+				if confirmation!=null
+					organization.hireApplicant -> applicant
+				else
+					organization.declineApplicant
+
+			else
+				user.loginCredentialsAreWrongTryAgain
+
+
+
+4. Ordering food in a restaurant
+
+	Things:
+
+		Restaurant:
+			Data: Name, Address, PhoneNumber
+
+		Customer:
+			Behavior: Select items, place order, pay, cancel order
+
+		Menu:
+			Data: Items, Price
+
+		CreditCard :
+			Data : Number, Name, Company, Expiry, SecurityCode
+
+		CreditCardCompany :
+			Behavior : authorizeTransaction, declineTransaction
+
+	Sequence of invoking behaviors on Objects:
+
+		Customer customer,
+		Restaurant restaurant,
+		Order myOrder,
+		CreditCard card,
+		CreditCardCompany visa,
+		Confirmation response
+
+
+		if restaurant is available or restaurant!=null
+			loop
+				if customer.wantsToAddFood
+					myOrder = food[]
+				else
+					break
+
+		customer.purchaseFood -> food[], creditCard, restaurant = order confirmation
+		response = orderconfirmation
+		
+		else
+			customer.restaurantNotAvailable
+
+
+
+	
+
