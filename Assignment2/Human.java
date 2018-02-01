@@ -1,3 +1,4 @@
+//PART-A(Q1)
 package com.pavi;
 
 public class Human {
