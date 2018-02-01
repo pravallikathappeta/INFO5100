@@ -1,3 +1,4 @@
+//PART-A(Q.1)
 package com.pavi;
 
 public class Earth {
