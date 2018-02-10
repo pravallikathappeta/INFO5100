@@ -1,4 +1,4 @@
-
+total scores: 10 / 10
 /*problem 3*/
 
 import java.util.Scanner;
