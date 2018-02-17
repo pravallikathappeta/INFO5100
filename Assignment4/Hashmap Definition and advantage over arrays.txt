@@ -1,0 +1,5 @@
+Hashmap is a map based collection class that is used for storing Key and value pairs. It is denoted as HashMap<Key,Value> OR HashMap<K,V>. You must need to import java.util.HashMap or its super class in order to use the HshMap class and methods.
+
+HashMap can be used over arrays in the following conditions:
+1.When you can identify your data with some unique key i.e. your data can be processed in key value pair.
+2.When no index based operations is required, instead key based operations are preferred.
