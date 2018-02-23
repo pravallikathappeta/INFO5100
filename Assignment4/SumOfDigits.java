@@ -1,4 +1,4 @@
-
+score : 2 / 2
 public class SumOfDigits
 {
     public int addDigits(int input )
