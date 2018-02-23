@@ -7,6 +7,8 @@ so you should keep the value in the key postion, and count the time in the value
 5. give return value and system print the function in "main".
   
     scores : 1.5 / 2
+      
+     total : 9 / 10
 
 
 
