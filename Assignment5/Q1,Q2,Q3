@@ -1,0 +1,43 @@
+Question 1:
+
+Error1:
+public setName(String name)
+{
+return name;
+}
+
+Here return type is not mentioned. It should be changed as public String setName(String name)
+
+Error2:
+public Book(int size){
+  this.size = size;
+  }
+public Book(int price){
+  this.price = price;
+  }
+  
+There are two constructors with the same parameters. The parameter list should be different.
+
+
+Question 2:
+
+void getTime(){
+  return time;
+  }
+  
+Here return type is mentioned as void but is returning string.
+So it shoudl be changed as String getTime()
+
+Question 3:
+1)
+Output:
+0
+0
+10
+0
+20
+30
+
+2)
+Error: 'ONE' is present two times. 
+  
