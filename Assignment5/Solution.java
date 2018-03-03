@@ -1,4 +1,4 @@
-//total scores : 9 / 10
+//total scores : 9.5 / 10
 // scores : 1 / 2
 //where is the main function? this code did not run properly because of logic problem. you should use stack to solve this problem.
 // if my input is "[{}]", your answer is wrong
