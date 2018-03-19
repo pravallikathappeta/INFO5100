@@ -1,0 +1,24 @@
+
+public class Assignment7 {
+
+    public static void main(String[] args) {
+
+        Assignment7 rmv = new Assignment7();
+        String rmvoutput = rmv.removeVowelsFromString("abcde");
+    }
+
+   public String removeVowelsFromString(String input)
+    {
+        System.out.println("Initial string: " + input);
+        for (int i=0;i<input.length();i++)
+        {
+            if(input.charAt(i) == 'a'|| input.charAt(i) == 'e'|| input.charAt(i) == 'i'|| input.charAt(i) == 'o'|| input.charAt(i) == 'u' || input.charAt(i) == 'A'|| input.charAt(i) == 'E'|| input.charAt(i) == 'I'|| input.charAt(i) == 'O'|| input.charAt(i) == 'U')
+            {
+                input = input.replace(input.charAt(i),' '); 
+            }
+        }
+        System.out.println("String after removing vowels: "+input);
+        return input;
+    }
+}
+
