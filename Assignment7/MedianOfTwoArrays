@@ -1,0 +1,79 @@
+public class Assignment7 {
+
+    public static void main(String[] args) {
+        Assignment7 medi = new Assignment7();
+        int[] nums1 = {45,11};
+        int[] nums2 = {93,36};
+        double nums = medi.findMedianSortedArrays(nums1, nums2);
+    }
+    
+    public double findMedianSortedArrays(int[] nums1, int[] nums2){ 
+        double median=0;
+        int temp;
+        int[] numbers = new int[nums1.length + nums2.length];
+
+        System.out.println("The numbers in the arrays are");
+        System.out.print("[ ");
+        for (int i=0; i<nums1.length;i++)
+        {
+            System.out.print(nums1[i]+" ");
+        }
+        System.out.print("] and");
+        System.out.print("[ ");
+        for (int i=0; i<nums2.length;i++)
+        {
+            System.out.print(nums2[i]+" ");
+        }
+        System.out.print("]");
+        
+        
+        //Combining two arrays into a single array
+        
+        for (int i=0; i<nums1.length; i++)
+        {
+            numbers[i] = nums1[i];
+        }
+        for (int i=0; i<nums2.length; i++)
+        {
+            numbers[nums1.length+i] = nums2[i];
+        }
+        
+
+
+        // Sorting numbers in the array
+
+        for (int i = 0; i < numbers.length; i++)
+        {
+            for (int j = i + 1; j < numbers.length; j++)
+            {
+                if (numbers[i] > numbers[j])
+                {
+                    temp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = temp;
+                }
+            }
+        }
+        System.out.println("\nSorted array = ");
+        for(int i=0;i<numbers.length;i++){
+            System.out.print(numbers[i] + " ");
+        }
+
+        //Median of the array:
+        
+        if((numbers.length%2) != 0)               //When there are odd number of values in the array
+        {
+            int middle = numbers.length/2;
+            double medianArray = numbers[middle];
+            System.out.println("Median = "+medianArray);
+        }
+        else                                    //When there are even number of values in the array
+        {
+            int middle1 = numbers.length/2;
+            int middle2 = middle1 - 1;
+            double medianArray = ((numbers[middle1] + numbers[middle2])/2.0);
+            System.out.println("Median = "+medianArray);
+        }
+        return median;
+    }
+}
